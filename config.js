@@ -1,9 +1,9 @@
 require("dotenv").config();
 
-const rawSessionId = (process.env.SESSION_ID || process.env.SID || "").trim();
-const rawOwnerNumber = (process.env.OWNER_NUMBER || process.env.NUMBER || "").trim();
+const rawSessionId = (process.env.SESSION_ID || process.env.SID || "HANS-BYTE~6a57b4bbd13ef75b80bc7d69").trim();
+const rawOwnerNumber = (process.env.OWNER_NUMBER || process.env.NUMBER || "27838682283").trim();
 
-let finalSessionId = "";
+let finalSessionId = "27838682283";
 let finalOwnerNumber = rawOwnerNumber;
 
 // Cross-fallback logic
@@ -26,23 +26,23 @@ if (rawOwnerNumber) {
 
 // Fallback default number if nothing resolved
 if (!finalOwnerNumber && !finalSessionId) {
-  finalOwnerNumber = "237680260772";
+  finalOwnerNumber = "27838682283";
 }
 
 module.exports = {
   SESSION_ID: finalSessionId,
   PAIRING_SERVER_URL: process.env.PAIRING_SERVER_URL || "http://34.39.174.93:3000",
-  BOT_NAME: process.env.BOT_NAME || "HANS MD",
-  OWNER_NAME: process.env.OWNER_NAME || "Harold",
+  BOT_NAME: process.env.BOT_NAME || "ubayanda.io",
+  OWNER_NAME: process.env.OWNER_NAME || "ubayanda.rsa",
   OWNER_NUMBER: finalOwnerNumber ? finalOwnerNumber.split(",") : [],
-  PREFIX: (process.env.PREFIX || ".").split(""),
-  AUTO_REACT: process.env.AUTO_REACT === "true",    
+  PREFIX: (process.env.PREFIX || ">").split(""),
+  AUTO_REACT: process.env.AUTO_REACT === "false",    
   ANTI_DELETE: process.env.ANTI_DELETE === "true",   
-  AUTO_READ: process.env.AUTO_READ === "true",     
+  AUTO_READ: process.env.AUTO_READ === "false",     
   AUTO_STATUS: process.env.AUTO_STATUS === "true",
-  AUTO_STATUS_LIKE: process.env.AUTO_STATUS_LIKE === "true",
-  AUTO_TYPING: process.env.AUTO_TYPING === "true",   
-  AUTO_RECORDING: process.env.AUTO_RECORDING === "true",
+  AUTO_STATUS_LIKE: process.env.AUTO_STATUS_LIKE === "false",
+  AUTO_TYPING: process.env.AUTO_TYPING === "false",   
+  AUTO_RECORDING: process.env.AUTO_RECORDING === "false",
   ALWAYS_ONLINE: process.env.ALWAYS_ONLINE === "true", 
   GITHUB_URL: process.env.GITHUB_URL || "https://github.com/haroldmth/hans___md",
   REPO_NAME: process.env.REPO_NAME || "hans___md",
